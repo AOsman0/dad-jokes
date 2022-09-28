@@ -1,0 +1,19 @@
+:root {
+  --dark-purple: #160c28ff;
+  --orange-yellow-crayola: #efcb68ff;
+  --honeydew: #e1efe6ff;
+  --ash-gray: #aeb7b3ff;
+  --rich-black-fogra-29: #000411ff;
+}
+
+body {
+  background-color: var(--honeydew);
+}
+
+.title {
+  text-align: center;
+}
+
+.joke {
+  align-items: center;
+}
