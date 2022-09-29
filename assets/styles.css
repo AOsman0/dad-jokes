@@ -17,3 +17,12 @@ body {
 .joke {
   align-items: center;
 }
+
+.jokes {
+  text-align: center;
+  color: var(--rich-black-fogra-29);
+  font-size: 1.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding-top: 1rem;
+  border: solid 1px var(--dark-purple);
+}

@@ -1,35 +1,47 @@
-const renderJoke = document.getElementById("renderjoke");
+const renderJokeBtn = document.getElementById("renderjoke");
+const jokesCard = document.getElementById("jokes-card");
+const refetchJokeBtn = document.getElementById("refetch-joke");
 
 const options = {
-  method: "GET",
   headers: {
-    "X-RapidAPI-Key": "de5255d304msh17588dc6e5ca726p16e6e5jsn40a3ad05698d",
-    "X-RapidAPI-Host": "joke110.p.rapidapi.com",
+    Accept: "application/json",
   },
 };
 
+const refetchANewJoke = () => {
+  console.log("hello");
+  localStorage.clear();
+  fetchData();
+};
+
+const hideRefetchJoke = () => {
+  document.getElementById("refetch-joke").style.display = "none";
+};
+
+const renderCardJokes = async () => {
+  jokesCard.innerHTML = dataFromLS.setup;
+};
+
 const fetchData = async () => {
-  const res = await fetch(
-    "https://joke110.p.rapidapi.com/random_joke",
-    options
-  );
+  const res = await fetch("https://icanhazdadjoke.com", options);
 
   const data = await res.json();
 
   console.log(data);
 
-  $("#jokes-card").append(`
-  <div>
-  <div class="jokes">The Joke:${data.setup}</div>
-  <div class="jokes">Punchline:${data.punchline}</div>
-  </div>`);
+  jokesCard.innerHTML = data.joke;
 };
 
-const renderJokes = (event) => {
-  event.preventDefault();
-  console.log("hey");
+const renderJokes = () => {
   fetchData();
-  renderJoke.remove();
+  renderJokeBtn.remove();
+  document.getElementById("refetch-joke").style.display = "block";
 };
 
-renderJoke.addEventListener("click", renderJokes);
+const onLoad = () => {
+  hideRefetchJoke();
+};
+
+renderJokeBtn.addEventListener("click", renderJokes);
+refetchJokeBtn.addEventListener("click", refetchANewJoke);
+window.onload = onLoad();
