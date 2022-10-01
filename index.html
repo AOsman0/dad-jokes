@@ -24,17 +24,18 @@
   <body>
     <section id="introduction-container">
       <h1 class="title">Hey Welcome To The Funniest Vanilla JS Site!</h1>
-      <button
-        type="button"
-        class="btn btn-primary btn-lg btn-block"
-        id="renderjoke"
-      >
-        Click Me To Laugh
+      <div class="d-grid gap-2 col-6 p-2 mx-auto">
+        <button type="button" class="btn btn-success" id="renderjoke">
+          Click Me To Laugh
+        </button>
+      </div>
+    </section>
+    <section id="jokes-card"></section>
+    <div class="d-grid gap-2 col-6 p-3 mx-auto">
+      <button type="button" class="btn btn-secondary" id="refetch-joke">
+        Refetch A New Joke
       </button>
-    </section>
-    <section id="jokes-card">
-    </section>
-    <button id="refetch-joke">Refetch A New Joke</button>
+    </div>
     <script src="./js/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>

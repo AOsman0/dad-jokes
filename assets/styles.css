@@ -26,3 +26,13 @@ body {
   padding-top: 1rem;
   border: solid 1px var(--dark-purple);
 }
+
+#renderjoke {
+  color: var(--rich-black-fogra-29);
+}
+
+#jokes-card {
+  text-align: center;
+  background-color: var(--ash-gray);
+  height: 4rem;
+}

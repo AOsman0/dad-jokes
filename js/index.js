@@ -16,6 +16,7 @@ const refetchANewJoke = () => {
 
 const hideRefetchJoke = () => {
   document.getElementById("refetch-joke").style.display = "none";
+  document.getElementById("jokes-card").style.display = "none";
 };
 
 const renderCardJokes = async () => {
@@ -36,6 +37,7 @@ const renderJokes = () => {
   fetchData();
   renderJokeBtn.remove();
   document.getElementById("refetch-joke").style.display = "block";
+  document.getElementById("jokes-card").style.display = "block";
 };
 
 const onLoad = () => {
